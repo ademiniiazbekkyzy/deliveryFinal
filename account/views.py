@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views import View
 
-from account.models import MenuItem, OrderModel
+from account.models import MenuItem, OrderModel, Category
 
 
 class Index(View):
@@ -26,8 +26,8 @@ class Order(View):
         # pass into context
         context = {
             'appetizers': appetizers,
-            'drinks': drinks,
             'entres': entres,
+            'drinks': drinks,
             'desserts': desserts,
         }
 
@@ -56,17 +56,17 @@ class Order(View):
 
             for item in order_items['items']:
                 price += item['price']
-                item.ids.append(item['id'])
+                item_ids.append(item['id'])
 
             order = OrderModel.objects.create(price=price)
-            order.items.add(*item_id)
+            order.items.add(*item_ids)
 
             context = {
                 'items': order_items['items'],
                 'price': price,
             }
 
-            return render(request, 'account/order_confirmation.html')
+            return render(request, 'account/order_confirmation.html', context)
 
 
 
