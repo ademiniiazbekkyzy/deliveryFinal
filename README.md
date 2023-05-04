@@ -11,4 +11,6 @@ side where those orders can be fulfilled and completed.
 Database(SQlite)
 
 API doc using swagger:
- image
+![IMAGE 2023-05-04 23:33:07](https://user-images.githubusercontent.com/102521781/236283516-ffbed8a8-a662-447a-8d2d-b909ad507033.jpg)
+![IMAGE 2023-05-04 23:33:25](https://user-images.githubusercontent.com/102521781/236283589-531a8d1a-dd87-4475-acef-c9d843278559.jpg)
+
