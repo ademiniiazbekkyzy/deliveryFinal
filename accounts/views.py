@@ -22,16 +22,16 @@ class Order(View):
         # get every item from each category
         appetizers = MenuItem.objects.filter(
             category__name__contains='Appetizer')
-        meal = MenuItem.objects.filter(category__name__contains='meal')
+        meals = MenuItem.objects.filter(category__name__contains='meal')
         desserts = MenuItem.objects.filter(category__name__contains='dessert')
-        drink = MenuItem.objects.filter(category__name__contains='drink')
+        drinks = MenuItem.objects.filter(category__name__contains='drink')
 
         # pass into context
         context = {
             'appetizers': appetizers,
-            'meal': meal,
+            'meals': meals,
             'desserts': desserts,
-            'drink': drink,
+            'drinks': drinks,
         }
 
         # render the template
