@@ -22,16 +22,16 @@ class Order(View):
         # get every item from each category
         appetizers = MenuItem.objects.filter(
             category__name__contains='Appetizer')
-        entres = MenuItem.objects.filter(category__name__contains='Entre')
-        desserts = MenuItem.objects.filter(category__name__contains='Dessert')
-        drinks = MenuItem.objects.filter(category__name__contains='Drink')
+        meal = MenuItem.objects.filter(category__name__contains='meal')
+        desserts = MenuItem.objects.filter(category__name__contains='dessert')
+        drink = MenuItem.objects.filter(category__name__contains='drink')
 
         # pass into context
         context = {
             'appetizers': appetizers,
-            'entres': entres,
+            'meal': meal,
             'desserts': desserts,
-            'drinks': drinks,
+            'drink': drink,
         }
 
         # render the template
@@ -125,7 +125,8 @@ class OrderConfirmation(View):
 
 class OrderPayConfirmation(View):
     def get(self, request, *args, **kwargs):
-        return render(request, 'customer/order_pay_confirmation.html')
+        return render(request, 'accounts/order_pay_confirmation.html')
+
 
 class Menu(View):
     def get(self, request, *args, **kwargs):
@@ -135,7 +136,7 @@ class Menu(View):
             'menu_items': menu_items
         }
 
-        return render(request, 'customer/menu.html', context)
+        return render(request, 'accounts/menu.html', context)
 
 
 class MenuSearch(View):
@@ -152,7 +153,7 @@ class MenuSearch(View):
             'menu_items': menu_items
         }
 
-        return render(request, 'customer/menu.html', context)
+        return render(request, 'accounts/menu.html', context)
 
 
 

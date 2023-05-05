@@ -1,3 +1,4 @@
+{% load static %}
 <nav class="navbar navbar-expand-lg navbar-dark indigo">
   <a class="navbar-brand" href="{% url 'index' %}">Deliver</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,7 +10,7 @@
         <a class="nav-link" href="{% url 'about' %}">About Us</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Menu</a>
+        <a class="nav-link" href="{% url 'menu' %}">Menu</a>
       </li>
     </ul>
     <ul class="navbar-nav">
@@ -19,12 +20,7 @@
     </ul>
         <ul class="navbar-nav">
       <li class="nav-item">
-        {% load static %}
-  <img src="{% static 'templates/alatoo.jpg' %}" alt="My image">
-
-<!--        <img>-->
-<!--        <img src="delivery2/accounts/templates/accounts/alatoo.png">-->
-<!--        <a class="nav-link" href="#"></a>-->
+        <img src ="{% static 'images/alatoo3.png' %}" height="30">
       </li>
     </ul>
   </div>
